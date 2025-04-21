@@ -1,26 +1,93 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 247, 250;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 40, 40, 40;
+    --background-end-rgb: 20, 20, 20;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-2 px-4 rounded hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-light transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-2 px-4 rounded hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-light transition-colors duration-300;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 text-gray-700 dark:text-gray-300 font-medium py-2 px-4 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-card-hover transition-shadow duration-300;
+  }
+  
+  .input-field {
+    @apply border border-gray-300 dark:border-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1 dark:text-gray-300;
+  }
+  
+  .section-title {
+    @apply text-2xl font-bold text-gray-800 mb-4 dark:text-white;
+  }
+  
+  .subsection-title {
+    @apply text-xl font-semibold text-gray-700 mb-3 dark:text-gray-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white font-semibold py-2 px-4 rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light transition-colors duration-300;
+  }
+  
+  .btn-success {
+    @apply bg-success text-white font-semibold py-2 px-4 rounded hover:bg-success-dark focus:outline-none focus:ring-2 focus:ring-success-light transition-colors duration-300;
+  }
+  
+  .btn-warning {
+    @apply bg-warning text-gray-900 font-semibold py-2 px-4 rounded hover:bg-warning-dark focus:outline-none focus:ring-2 focus:ring-warning-light transition-colors duration-300;
+  }
+  
+  .btn-error {
+    @apply bg-error text-white font-semibold py-2 px-4 rounded hover:bg-error-dark focus:outline-none focus:ring-2 focus:ring-error-light transition-colors duration-300;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-light text-primary-dark dark:bg-primary-dark dark:text-primary-light;
+  }
+  
+  .badge-secondary {
+    @apply bg-secondary-light text-secondary-dark dark:bg-secondary-dark dark:text-secondary-light;
+  }
+  
+  .badge-accent {
+    @apply bg-accent-light text-accent-dark dark:bg-accent-dark dark:text-accent-light;
+  }
 }

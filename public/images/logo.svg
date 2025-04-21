@@ -1,0 +1,7 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="20" fill="#F3F4F6" />
+  <path d="M40 50H160V150H40V50Z" fill="#4F46E5" />
+  <path d="M60 70H140V130H60V70Z" fill="white" />
+  <path d="M70 90H130V110H70V90Z" fill="#4F46E5" />
+  <text x="100" y="170" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#4F46E5">DWELLA</text>
+</svg> 
